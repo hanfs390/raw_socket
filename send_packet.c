@@ -115,12 +115,12 @@ int main()
 	struct sockaddr_ll sadr_ll;
 	sadr_ll.sll_ifindex = index; // index of interface
 	sadr_ll.sll_halen = ETH_ALEN; // length of destination mac address
-	sadr_ll.sll_addr[0] = 0xdc;
+/*	sadr_ll.sll_addr[0] = 0xdc;
 	sadr_ll.sll_addr[1] = 0x08;
 	sadr_ll.sll_addr[2] = 0x56;
 	sadr_ll.sll_addr[3] = 0xa2;
 	sadr_ll.sll_addr[4] = 0x01;
-	sadr_ll.sll_addr[5] = 0x10;
+	sadr_ll.sll_addr[5] = 0x10;*/
 	int send_len = 0;
 	send_len = sendto(sock, sendbuff, 64, 0, (const struct sockaddr*)&sadr_ll,sizeof(struct sockaddr_ll));
 	if (send_len < 0) {
